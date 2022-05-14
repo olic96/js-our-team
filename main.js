@@ -64,46 +64,5 @@ for(let i = 0; i < teamCards.length; i++) {
     teamContainer.innerHTML += teamCard;
 }
 
-/*------- BONUS -------*/ 
-
-// seleziono gli elementi del dom e li importo in una variabile js.
-
-const memberName = document.getElementById("name");
-const memberRole = document.getElementById("role");
-const memberImage = document.getElementById("image");
-const btnMember = document.getElementById("addMemberButton");
-
-
-// faccio in modo che i dati inseriti nelle precedenti variabili mi creino un nuovo oggetto.
-// faccio in modo che il nuovo oggetto venga aggiunto in teamCards.
-// aggiungo un evento click a btnMember e creo una funzione che mi possa aggiungere la nuova card.
-
-btnMember.addEventListener("click",
-    function() {
-        const newMember = {
-            image: memberImage.value,
-            name: memberName.value,
-            job: memberRole.value,
-        }
-        const teamCard = `
-        <div class="team-card">
-                <div class="card-image">
-                <img
-                    src="${newMember.image}"
-                    alt="${newMember.name}"
-                />
-                </div>
-                <div class="card-text">
-                <h3>${newMember.name}</h3>
-                <p>${newMember.job}</p>
-                </div>
-            </div>
-        `;
-        teamContainer.innerHTML += teamCard;
-        teamCards.push(teamCard);
-    }
-);
-
-
 
  
